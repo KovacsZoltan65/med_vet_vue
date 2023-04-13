@@ -1,0 +1,33 @@
+https://www.youtube.com/watch?v=8_ptB59jcWM&list=PLT51dtioU1pNUZtUhg9pmKpa8JyaCVUXh&ab_channel=Ajayyadav
+https://www.youtube.com/watch?v=0AfQ8D3GNd0&list=PLT51dtioU1pNUZtUhg9pmKpa8JyaCVUXh&index=3&ab_channel=Ajayyadav
+https://www.youtube.com/watch?v=0AfQ8D3GNd0&list=PLT51dtioU1pNUZtUhg9pmKpa8JyaCVUXh&index=3&ab_channel=Ajayyadav
+
+echo "# med_vet_vue" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KovacsZoltan65/med_vet_vue.git
+git push -u origin main
+
+npm i bootstrap bootstrap-icons
+
+HUMAN TYPES
+    php artisan migrate:generate --tables="human_types"
+    php artisan migrate:generate --tables="human_types_tl"
+    php artisan make:model HumanType
+    php artisan make:controller HumanTypeController --resource
+    php artisan make:repository HumanType
+    php artisan make:criteria HumanType
+    php artisan make:request HumanTypesInsertRequest
+    php artisan make:request HumanTypesUpdateRequest
+
+HUMANS
+    php artisan migrate:generate --tables="humans"
+    php artisan migrate:generate --tables="humans_tl"
+    php artisan make:model Human
+    php artisan make:controller humanController --resource
+    php artisan make:repository Human
+    php artisan make:criteria Human
+    php artisan make:request HumanInsertRequest
+    php artisan make:request HumanUpdateRequest
