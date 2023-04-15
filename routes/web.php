@@ -19,7 +19,7 @@ Route::get('/', function () { return view('welcome'); });
 |--------------------------------------------------------------------------
 | HUMAN TYPES
 |-------------------------------------------------------------------------- 
- */
+*/
 //Route::get('get_types', App\Http\Controllers\HumanTypeController::class, 'get_types');
 Route::resource('human_types', App\Http\Controllers\HumanTypeController::class);
 
@@ -27,5 +27,12 @@ Route::resource('human_types', App\Http\Controllers\HumanTypeController::class);
 |--------------------------------------------------------------------------
 | HUMANS
 |-------------------------------------------------------------------------- 
- */
+*/
 Route::resource('humans', App\Http\Controllers\HumanController::class);
+
+/*
+|--------------------------------------------------------------------------
+| OFFICES
+|-------------------------------------------------------------------------- 
+*/
+Route::resource('offices', App\Http\Controllers\OfficeController::class);
