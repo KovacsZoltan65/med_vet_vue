@@ -29,10 +29,14 @@
                             <h3 class="card-title">Humans</h3>
 
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <button type="button" class="btn btn-tool" 
+                                        data-card-widget="collapse" 
+                                        title="Collapse">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                <button type="button" class="btn btn-tool" 
+                                        data-card-widget="remove" 
+                                        title="Remove">
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
@@ -41,19 +45,21 @@
 
                             <div class="pull-right mb-2">
                                 <!-- ADD -->
-                            <!--
-                                <button type="button" class="btn btn-primary btn-sm" 
-                                        @click="addHuman()"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <!--
+                                    <button type="button" class="btn btn-primary btn-sm" 
+                                            @click="addHuman()"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                -->
+                                <router-link :to="{name: 'HumansCreate'}" 
+                                              class="btn btn-primary btn-sm">
                                     <i class="fas fa-plus"></i>
-                                </button>
-                            -->
-                            <router-link :to="{name: 'HumansCreate'}" class="btn btn-primary btn-sm">
-                                <i class="fas fa-plus"></i>
-                            </router-link>
+                                </router-link>
 
                                 <!-- REFRESH -->
-                                <button type="button" class="btn btn-success btn-sm ml-1" v-on:click="getHumans()">
+                                <button type="button" class="btn btn-success btn-sm ml-1" 
+                                        v-on:click="getHumans()">
                                     <i class="fas fa-sync"></i>
                                 </button>
                             
@@ -72,17 +78,11 @@
                                     <tr v-for="value in list_of_humans" :key="value.id">
                                         <td>{{ value.id }}</td>
                                         <td>{{ value.name }}</td>
-                                        <td>{{ value.type_id }}</td>
+                                        <td></td>
                                         <td>
-                                        <!--
-                                            <button type="button" class="btn btn-primary btn-sm" 
-                                            @click="editHuman()">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                        -->
                                             <router-link :to="{path: `/humans/${value.id}`}" 
                                                          class="btn btn-primary btn-sm">
-                                                         <i class="fas fa-edit"></i>
+                                                <i class="fas fa-edit"></i>
                                             </router-link>
 
                                             <button type="button" class="btn btn-danger btn-sm ml-1">
@@ -116,13 +116,13 @@
 
 <script>
 
-import DefaultButton from '../../components/buttons/DefaultButton.vue';
+//import DefaultButton from '../../components/buttons/DefaultButton.vue';
 
 export default {
     name: 'HumansPage',
 
     components: {
-        DefaultButton
+        //DefaultButton
     },
 
     data() {
@@ -185,7 +185,7 @@ export default {
         editHuman() {
             console.log("EDIT");
         },
-        addHuman() {
+        createHuman() {
             console.log("ADD");
         },
     },

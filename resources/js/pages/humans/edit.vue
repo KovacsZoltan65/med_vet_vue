@@ -37,7 +37,9 @@
                 </div>
                 <form @submit.prevent="save">
                     <div class="card-body">
+                        <input type="hidden" name="_token" :value="csrf">
                         <input type="hidden" id="id" name="id" v-model="human.id"/>
+                        
                         <!-- NAME -->
                         <div class="form-group row">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -108,6 +110,7 @@ export default {
 
     data(){
         return {
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             human_id: 0,
             messages: [],
             human: {
@@ -140,6 +143,8 @@ export default {
                     console.log('error:' + error);
                 });
         },
+
+        getHumanTypes(){},
 
         save() {
             console.log('SAVE');

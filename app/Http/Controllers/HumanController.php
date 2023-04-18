@@ -18,8 +18,15 @@ class HumanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if( $request->has('view_delete') ){
+            $humans = $this->repository->onlyTrashed()
+                ->paginate($limit = config('app.paginate_number'), $columns = ['*']);
+        }else{
+            $humans = $this->repository
+                ->paginate($limit = config('app.paginate_number'), $columns = ['*']);
+        }
         //$humans = $this->repository->paginate($limit = config('app.paginate_number'), $columns = ['*']);
         $humans = Human::all();
         

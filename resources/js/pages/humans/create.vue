@@ -24,7 +24,7 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Title</h3>
+                    <h3 class="card-title">Create Human</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,8 +36,13 @@
                     </div>
                 </div>
                 <form @submit.prevent="save">
+                    
+                    <input type="hidden" name="_token" :value="csrf">
+
                     <div class="card-body">
+                        <input type="hidden" name="_token" :value="csrf">
                         <input type="hidden" id="id" name="id" v-model="human.id" />
+
                         <!-- NAME -->
                         <div class="form-group row">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -49,24 +54,7 @@
                                 </span>
                             </div>
                         </div>
-
                         <!-- TYPE -->
-                        <!--<div class="form-group row">
-                            <label for="type" class="col-sm-2 col-form-label">Type</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="type_id" name="type_id" v-model="human.type_id">
-                                    <option selected>SELECT</option>
-                                    <option v-for="type in human_types" 
-                                        :value="type.id" :key="type.id" >
-                                        {{ type.name }}
-                                    </option>
-                                </select>
-                                <span id="span_type" name="span_type" class="help-block invalid-feedback"
-                                    style="display: block;">
-                                </span>
-                            </div>
-                        </div>-->
-
                         <div class="form-group row">
                             <label for="type" class="col-sm-2 col-form-label">Type</label>
                             <div class="col-sm-10">
@@ -113,6 +101,7 @@ export default {
 
     data() {
         return {
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             human_types: [],
             human: {
                 id: 0,
@@ -120,11 +109,11 @@ export default {
                 type_id: 0
             },
             selected: {
-                type: ''
+                type: {}
             }
         }
     },
-    mounted() { },
+    mounted() {},
     created() {
         this.getHumanTypes();
     },
@@ -133,7 +122,7 @@ export default {
         getHumanTypes() {
             axios.get('create')
                 .then(response => {
-                    //console.log(response.data.data.types);
+                    //console.log(response);
                     this.human_types = response.data.data.types;
                 })
                 .catch(error => {
