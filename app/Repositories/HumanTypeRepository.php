@@ -7,7 +7,7 @@ use App\Models\HumanType;
 use App\Repositories\BaseRepository;
 
 /**
- * Class HumanRepositoryEloquent.
+ * Class HumanTypeRepositoryEloquent.
  *
  * @package namespace App\Repositories;
  */
@@ -22,6 +22,8 @@ class HumanTypeRepository extends BaseRepository
     {
         return HumanType::class;
     }
+
+    
 
     /**
      * Boot up the repository, pushing criteria
