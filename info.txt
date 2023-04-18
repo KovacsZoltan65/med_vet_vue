@@ -31,3 +31,25 @@ HUMANS
     php artisan make:criteria Human
     php artisan make:request HumanInsertRequest
     php artisan make:request HumanUpdateRequest
+
+OFFICES
+    php artisan migrate:generate --tables="offices"
+    php artisan migrate:generate --tables="offices_tl"
+    php artisan make:model Office
+    php artisan make:controller OfficeController --resource
+    php artisan make:repository Office
+    php artisan make:resource OfficeResource
+    php artisan make:criteria Office
+    php artisan make:request OfficeInsertRequest
+    php artisan make:request OfficeUpdateRequest
+
+OFFICES TYPES
+    php artisan migrate:generate --tables="office_types"
+    php artisan migrate:generate --tables="office_types_tl"
+    php artisan make:model OfficeType
+    php artisan make:controller OfficeTypeController --resource
+    php artisan make:repository OfficeType
+    php artisan make:resource OfficeTypeResource
+    php artisan make:criteria OfficeType
+    php artisan make:request OfficeTypeInsertRequest
+    php artisan make:request OfficeTypeUpdateRequest

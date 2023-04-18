@@ -36,8 +36,7 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
         return $this->parserResult($model);
     }
 
-    public function update(array $attributes, $id)
-    {
+    public function update(array $attributes, $id){
         // Have to skip presenter to get a model not some data
         $temporarySkipPresenter = $this->skipPresenter;
         $this->skipPresenter(true);

@@ -36,3 +36,10 @@ Route::resource('humans', App\Http\Controllers\HumanController::class);
 |-------------------------------------------------------------------------- 
 */
 Route::resource('offices', App\Http\Controllers\OfficeController::class);
+
+/*
+|--------------------------------------------------------------------------
+| OFFICE TYPES
+|-------------------------------------------------------------------------- 
+*/
+Route::resource('office_types', \App\Http\Controllers\OfficeTypeController::class);

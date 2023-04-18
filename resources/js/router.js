@@ -2,9 +2,17 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import home from './pages/home.vue';
 
+import human_types from './pages/human_types/index.vue';
+import human_types_create from './pages/human_types/create.vue';
+import human_types_edit from './pages/human_types/edit.vue';
+
 import humans from './pages/humans/index.vue';
 import humans_create from './pages/humans/create.vue';
 import humans_edit from './pages/humans/edit.vue';
+
+import offices from './pages/offices/index.vue';
+import offices_create from './pages/offices/create.vue';
+import offices_edit from './pages/offices/edit.vue';
 
 import login from './pages/login.vue';
 import register from './pages/register.vue';
@@ -20,6 +28,36 @@ const routes = [
         component: home
     },
     {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: dashboard,
+        meta:{
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/about',
+        name: "About",
+        component: About,
+    },
+    // HUMAN TYPES
+    {
+        path: '/human_types',
+        name: 'HumanTypes',
+        component: human_types
+    },
+    {
+        path: '/human_types/create',
+        name: 'HumanTypesCreate',
+        component: human_types_create
+    },
+    {
+        path: '/human_types/edit',
+        name: 'HumanTypesEdit',
+        component: human_types_edit
+    },
+    // HUMANS
+    {
         path: '/humans',
         name: 'Humans',
         component: humans
@@ -34,6 +72,25 @@ const routes = [
         name: 'HumansEdit',
         component: humans_edit
     },
+
+    // OFFICES
+    {
+        path: '/offices',
+        name: 'Offices',
+        component: offices
+    },
+    {
+        path: '/offices/create',
+        name: 'OfficesCreate',
+        component: offices_create
+    },
+    {
+        path: '/offices/:id',
+        name: 'OfficesEdit',
+        component: offices_edit
+    },
+
+    // ADMIN
     {
         path: '/login',
         name: 'Login',
@@ -50,19 +107,7 @@ const routes = [
             requiresAuth: false
         }
     },
-    {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: dashboard,
-        meta:{
-            requiresAuth: true
-        }
-    },
-    {
-        path: '/about',
-        name: "About",
-        component: About,
-    },
+    
     {
         path: '/:catchAll(.*)*',
         name: 'PageNotFound',

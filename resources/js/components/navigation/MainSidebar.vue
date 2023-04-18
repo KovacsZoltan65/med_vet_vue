@@ -45,11 +45,34 @@
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+
+                        <!-- HUMAN TYPES -->
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <router-link to="/human_types" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Human Types</p>
+                                </router-link>
+                            </li>
+                        </ul>
+
+                        <!-- HUMANS -->
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <router-link to="/humans" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Humans</p>
+                                </router-link>
+                            </li>
+                        </ul>
+
+                        <!-- OFFICES -->
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <router-link :to="{name: 'Offices'}" 
+                                             class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Offices</p>
                                 </router-link>
                             </li>
                         </ul>

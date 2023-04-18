@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>AdminLTE 3 | Blank Page</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -13,7 +15,11 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 
-    @vite([ 'resources/css/app.css' , 'resources/js/app.js' ])
+    @vite([ 
+        'resources/css/app.css' , 
+        'resources/js/app.js' 
+    ])
+
 </head>
 
 <body class="hold-transition sidebar-mini">
