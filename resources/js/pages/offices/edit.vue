@@ -9,7 +9,11 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item">
+                                <!--<a href="#">Home</a>-->
+                                <HomeLink />
+                            </li>
+                            <router-link :to="{name: 'Offices'}">Offices</router-link>
                             <li class="breadcrumb-item active">Edit Office Page</li>
                         </ol>
                     </div>
@@ -100,11 +104,14 @@
 
 <script>
 import { useRoute } from 'vue-router';
+import HomeLink from '../../components/links/HomeLink.vue';
 
 export default{
     name: 'OfficeEditPage',
 
-    components: {},
+    components: {
+        HomeLink
+    },
 
     data(){
         return {

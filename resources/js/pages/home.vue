@@ -9,7 +9,9 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <!--<li class="breadcrumb-item">
+                                <HomeLink />
+                            </li>-->
                             <li class="breadcrumb-item active">Home Page</li>
                         </ol>
                     </div>
@@ -49,3 +51,14 @@
         <!-- /.content -->
     </div>
 </template>
+
+<script>
+import HomeLink from '../components/links/HomeLink.vue';
+
+export default{
+    name: 'Home',
+    components:{
+        HomeLink
+    }
+}
+</script>

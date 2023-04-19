@@ -9,8 +9,13 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Humans</a></li>
+                            <li class="breadcrumb-item">
+                                <!--<a href="#">Home</a>-->
+                                <HomeLink />
+                            </li>
+                            <li class="breadcrumb-item">
+                                <router-link :to="{name: 'Humans'}" >Humans</router-link>
+                            </li>
                             <li class="breadcrumb-item active">Edit</li>
                         </ol>
                     </div>
@@ -27,10 +32,12 @@
                     <h3 class="card-title">Title</h3>
 
                     <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <button type="button" class="btn btn-tool" 
+                                data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <button type="button" class="btn btn-tool" 
+                                data-card-widget="remove" title="Remove">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -102,11 +109,14 @@
 
 <script>
 import { useRoute } from 'vue-router';
+import HomeLink from '../../components/links/HomeLink.vue';
 
 export default {
     name: 'HumanEditPage',
     
-    components: {},
+    components: {
+        HomeLink
+    },
 
     data(){
         return {

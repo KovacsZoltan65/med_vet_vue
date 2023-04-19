@@ -9,7 +9,9 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item">
+                                <HomeLink/>
+                            </li>
                             <li class="breadcrumb-item active">Offices Page</li>
                         </ol>
                     </div>
@@ -115,15 +117,14 @@
 </template>
 
 <script>
-
-//import DefaultButton from '../../components/buttons/DefaultButton.vue';
+import HomeLink from '../../components/links/HomeLink.vue';
 
 export default {
     name: 'OfficesPage',
 
     components: {
-        //DefaultButton
-    },
+    HomeLink
+},
 
     data() {
         return {

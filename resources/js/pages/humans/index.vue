@@ -9,7 +9,10 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item">
+                                <!--<a href="#">Home</a>-->
+                                <router-link :to="{name: 'Home'}">Home</router-link>
+                            </li>
                             <li class="breadcrumb-item active">Humans Page</li>
                         </ol>
                     </div>
@@ -85,7 +88,8 @@
                                                 <i class="fas fa-edit"></i>
                                             </router-link>
 
-                                            <button type="button" class="btn btn-danger btn-sm ml-1">
+                                            <button type="button" 
+                                                    class="btn btn-danger btn-sm ml-1">
                                                 <i class="fas fa-trash"></i>
                                             </button>
 
